@@ -1,0 +1,39 @@
+/* Seat map layout */
+.seat-map {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 seats in each row */
+  gap: 10px;
+  justify-items: center;
+  padding: 10px;
+}
+
+/* Seat styling */
+.seat {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgreen;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.seat.booked {
+  background-color: lightcoral;
+  cursor: not-allowed;
+}
+
+/* Responsive seat map for smaller screens */
+@media (max-width: 600px) {
+  .seat {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .seat-map {
+    grid-template-columns: repeat(4, 1fr); /* 4 seats per row for smaller screens */
+  }
+}
